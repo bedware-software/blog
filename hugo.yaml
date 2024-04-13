@@ -1,8 +1,6 @@
 # hugo server --minify --themesDir ../.. --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
 baseURL: /
-title: Blog
-# theme: hugo-book
 
 # Book configuration
 disablePathToLower: true
@@ -25,22 +23,54 @@ defaultContentLanguageInSubdir: true
 languages:
   ru:
     languageName: Русский
-    contentDir: content.ru
+    title: Блог
     weight: 1
+    params:
+      author:
+        email: dmitry.surin@gmail.com
+        name: Дмитрий Сурин
+      subtitle: Пиши код!
   en:
     languageName: English
-    contentDir: content.en
+    title: Blog
     weight: 2
+    params:
+      author:
+        email: dmitry.surin@gmail.com
+        name: Dmitry Surin
+      subtitle: Write code!
 
-menu:
-  # before: []
-  # after:
-  #   - name: "Github"
-  #     url: "https://github.com/alex-shpak/hugo-book"
-  #     weight: 10
-  #   - name: "Hugo Themes"
-  #     url: "https://themes.gohugo.io/themes/hugo-book/"
-  #     weight: 20
+menus:
+  after:
+  - name: Github
+    weight: 1
+    params:
+      rel: external
+    url: https://github.com/bedware-software
+  - name: Telegram
+    weight: 2
+    params:
+      rel: external
+    url: https://t.me/bedware_software
+  - name: Twitter
+    weight: 3
+    params:
+      rel: external
+    url: https://twitter.com/bedware
+  - name: Twitch
+    weight: 4
+    params:
+      rel: external
+    url: https://www.twitch.tv/bedware_software
+  - name: Youtube
+    weight: 5
+    params:
+      rel: external
+    url: https://www.youtube.com/@bedware_software
+  - name: Instagram
+    params:
+      rel: external
+    url: https://www.instagram.com/bedware.software
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
@@ -62,12 +92,12 @@ params:
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  # BookMenuBundle: /menu
+  BookMenuBundle: /menu
 
   # (Optional, default docs) Specify root page to render child pages as menu.
   # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
   # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
-  # BookSection: posts
+  # BookSection: /
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
