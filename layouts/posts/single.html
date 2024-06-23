@@ -5,6 +5,13 @@
   </h1>
   {{ partial "docs/post-meta" . }}
   {{- .Content -}}
+
+  <p class="flex flex-column align-center">
+    {{ i18n "Subscribe to" }}
+    <span>👇👇👇</span>
+    {{ partial "docs/button" (dict "href" $.Site.Params.Telegram.Link "text" $.Site.Params.Telegram.Text) }}
+  </p>
+
 </article>
 {{ end }}
 

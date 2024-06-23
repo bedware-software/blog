@@ -18,59 +18,60 @@ markup:
 # There are different options to translate files
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
-defaultContentLanguage: ru
+defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 languages:
-  ru:
-    languageName: Русский
-    title: Блог
-    weight: 1
-    params:
-      author:
-        email: dmitry.surin@gmail.com
-        name: Дмитрий Сурин
-      subtitle: Пиши код!
   en:
     languageName: English
-    title: Blog
-    weight: 2
+    title: bedware.software
+    weight: 1
     params:
       author:
         email: dmitry.surin@gmail.com
         name: Dmitry Surin
       subtitle: Write code!
-
+      telegram:
+        link: https://t.me/bedware_software
+        text: Telegram channel
+  ru:
+    languageName: Русский
+    title: bedware.software
+    weight: 2
+    params:
+      author:
+        email: dmitry.surin@gmail.com
+        name: Дмитрий Сурин
+      subtitle: Пиши код!
+      telegram:
+        link: https://t.me/bedware_software_ru
+        text: Телеграм канал
 menus:
   after:
   - name: Github
-    weight: 1
+    # weight: 1
     params:
       rel: external
     url: https://github.com/bedware-software
-  - name: Telegram
-    weight: 2
-    params:
-      rel: external
-    url: https://t.me/bedware_software
-  - name: Twitter
-    weight: 3
-    params:
-      rel: external
-    url: https://twitter.com/bedware
+  # - name: Telegram
+  #   # weight: 2
+  #   params:
+  #     rel: external
+  #   url: https://t.me/bedware_software
   - name: Twitch
-    weight: 4
+    # weight: 3
     params:
       rel: external
     url: https://www.twitch.tv/bedware_software
   - name: Youtube
-    weight: 5
+    # weight: 4
     params:
       rel: external
     url: https://www.youtube.com/@bedware_software
-  - name: Instagram
+  - name: Twitter
+    # weight: 5
     params:
       rel: external
-    url: https://www.instagram.com/bedware.software
+    url: https://twitter.com/bedware
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
@@ -101,7 +102,7 @@ params:
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo: https://github.com/bedware-software/blog.bedware.software
+  BookRepo: https://github.com/bedware-software/blog
 
   # (Optional, default 'commit') Specifies commit portion of the link to the page's last modified
   # commit hash for 'doc' page type.

@@ -4,6 +4,6 @@ menus:
     name: blog
 headless: true
 ---
-</br>
+</br>**Social links**
 
-**Social links**
+<a href="https://t.me/bedware_software">Telegram</a>

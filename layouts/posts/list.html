@@ -1,20 +1,40 @@
 {{ define "main" }}
-  {{ range sort .Paginator.Pages }}
-  <article class="markdown book-post">
-    <h2>
-      <a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a>
-    </h2>
-    {{ partial "docs/post-meta" . }}
-    <p>
-      {{- .Summary -}}
-      {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}">...</a>
-      {{ end }}
-    </p>
+<div class="book-list-grouped">
+
+  {{ range (where .Paginator.Pages "Params.bookhidden" "ne" true).GroupByDate "2006" }}
+  <article class="markdown">
+    <h1 class="text-align-center">{{ .Key }}</h1>
+
+    {{ range .Pages }}
+    <h3>
+        <a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a>
+    </h3>
+
+
+    {{ range $i, $e := .Params.categories -}}
+    {{- if $i -}}, {{ end -}}
+        <a class="book-subtitle" href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'>{{ $e }}</a>
+    {{- end -}}
+
+    {{ if and (.Params.categories) (.Params.tags) }}
+        {{ if and (gt (len .Params.categories) 0) (gt (len .Params.tags) 0) }}
+            / 
+        {{ end }}
+    {{ end }}
+
+    {{ range $i, $e := .Params.tags -}}
+    {{- if $i -}}, {{ end -}}
+        <a class="book-subtitle" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>{{ $e }}</a>
+    {{- end -}}
+
+    <div class="book-subtitle">{{ .Date | time.Format ":date_full" | strings.FirstUpper }}</div>
+    {{ end }}
+
   </article>
   {{ end }}
 
   {{ template "_internal/pagination.html" . }}
+</div>
 {{ end }}
 
 {{ define "toc" }}

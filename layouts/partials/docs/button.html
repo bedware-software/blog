@@ -1,0 +1,12 @@
+{{ $ref := "" }}
+{{ $target := "" }}
+{{ with .href }}
+  {{ $ref = . }}
+  {{ $target = "_blank" }}
+{{ end }}
+{{ with .relref }}
+  {{ $ref = relref $ . }}
+{{ end }}
+<a {{ with $ref }} href="{{.}}" {{ end }} {{ with $target }} target="{{.}}" rel="noopener" {{ end }} class="book-btn{{ with .class }} {{ . }}{{ end }}">
+  {{ .text }}
+</a>
