@@ -41,3 +41,5 @@ MyBang! will be a great tool for those who often use search on various sites and
 
 
 I hope you enjoy my project and find it useful. Stay in touch and stay tuned for updates!
+
+GitHub: https://github.com/bedware-software/mybang
