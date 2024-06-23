@@ -6,7 +6,9 @@
   {{ with $terms := $.GetTerms $taxonomy }}
   <div>
     {{ range $n, $term := $terms }}{{ if $n }}, {{ end }}
-      <a href="{{ $term.RelPermalink }}">{{ $term.Title }}</a>
+      <a href="{{ $term.RelPermalink }}">
+        {{ partial "docs/translate-with-fallback.html" $term.Title | strings.FirstUpper }}
+      </a>
     {{- end }}
   </div>
   {{ end }}

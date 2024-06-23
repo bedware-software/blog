@@ -4,7 +4,7 @@ title: "New project: MyBang!"
 categories:
     - development
 tags: 
-    - project
+    - projects
     - mybang
 ---
 MyBang! is a handy service for abbreviating website addresses and searches, inspired by the bangs ideas in DuckDuckGo. It makes it easy to create your own abbreviations and jump straight to search results.

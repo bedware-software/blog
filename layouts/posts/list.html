@@ -13,7 +13,9 @@
 
     {{ range $i, $e := .Params.categories -}}
     {{- if $i -}}, {{ end -}}
-        <a class="book-subtitle" href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'>{{ $e }}</a>
+        <a class="book-subtitle" href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'>
+            {{ partial "docs/translate-with-fallback.html" $e }}
+        </a>
     {{- end -}}
 
     {{ if and (.Params.categories) (.Params.tags) }}
@@ -24,7 +26,9 @@
 
     {{ range $i, $e := .Params.tags -}}
     {{- if $i -}}, {{ end -}}
-        <a class="book-subtitle" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>{{ $e }}</a>
+        <a class="book-subtitle" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
+            {{ partial "docs/translate-with-fallback.html" $e }}
+        </a>
     {{- end -}}
 
     <div class="book-subtitle">{{ .Date | time.Format ":date_full" | strings.FirstUpper }}</div>

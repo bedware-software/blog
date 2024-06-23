@@ -1,0 +1,6 @@
+{{- $title := . | strings.ToLower | i18n -}}
+{{- if eq (len $title) 0 -}}
+    {{ . | strings.ToLower }}
+{{- else -}}
+    {{ $title }}
+{{- end -}}

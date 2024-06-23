@@ -24,3 +24,12 @@
 
 - id: Subscribe to
   translation: Подписывайся на
+
+# Tags & Categories
+
+- id: projects
+  translation: проекты
+
+- id: development
+  translation: разработка
+

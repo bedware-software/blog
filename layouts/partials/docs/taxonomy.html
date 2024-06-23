@@ -7,7 +7,9 @@
       <ul>
       {{ range .Pages }}
         <li class="flex justify-between">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">
+            {{ partial "docs/translate-with-fallback.html" .Title }}
+          </a>
           <span>{{ len .Pages }}</span>
         </li>
       {{ end }}
