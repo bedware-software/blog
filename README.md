@@ -1,1 +1,0 @@
-# blog.bedware.software
